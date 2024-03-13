@@ -4,7 +4,6 @@ const sendCookieToken = async (user,status,res)=>{
     {
         expires:new Date(Date.now() + process.env.cookieExpire * 24 * 60 * 60 * 1000 ),
         httpOnly:true,
-        sameSite:'None',
     }
     res.status(status).cookie("token",token,cookieOptions).json({sucess:true,user,token});
 
