@@ -12,8 +12,8 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 const corsOptions = {
-    origin: process.env.FRONTEND_URL,
-    credentials: true,
+    origin: "*",
+    credentials: true
 };
 
 app.use(cors(corsOptions));
@@ -21,7 +21,7 @@ app.use(cors(corsOptions));
 app.use(cookieParser({ 
     origin: process.env.FRONTEND_URL,
 }));
-// app.use(bodyParser.json());
+
 app.use(express.json());
 app.use("/api/v1",productRoute);
 app.use("/api/v1",userRoute);
