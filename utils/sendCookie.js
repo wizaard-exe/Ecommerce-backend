@@ -5,6 +5,7 @@ const sendCookieToken = async (user,status,res)=>{
         httpOnly: true,
         secure: true, 
         sameSite: "None", 
+        domain:process.env.FRONTEND_URL
       };
     res.status(status).cookie("token",token,cookieOptions).json({sucess:true,user,token});
 
