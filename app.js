@@ -18,9 +18,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.use(cookieParser({ 
-    origin: process.env.FRONTEND_URL,
-}));
+app.use(cookieParser());
 
 app.use(express.json());
 app.use("/api/v1",productRoute);
