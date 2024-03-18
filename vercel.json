@@ -1,15 +1,22 @@
 {
-    "version": 2,
-    "name":"backendDeployment",
-    "builds": [
-      {
-        "src": "app.js",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      { "src": "/(.*)", "dest": "/app.js",
-      "key": "Access-Control-Allow-Origin", "value": "*"}
-    ]
-  }
-  
+  "version": 2,
+  "name": "backendDeployment",
+  "builds": [
+    {
+      "src": "app.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/app.js",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    }
+  ]
+}
