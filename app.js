@@ -12,7 +12,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 const corsOptions = {
-    origin: "*",
+    origin: process.env.FRONTEND_URL,
     credentials: true
 };
 
